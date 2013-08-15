@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CivSim1.Lib")]
+[assembly: AssemblyTitle("CivSim1.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CivSim1.Lib")]
+[assembly: AssemblyProduct("CivSim1.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3826217a-cae9-46ff-a47f-e73fb3a906f0")]
+[assembly: Guid("7670b39b-dffa-425a-88fe-5dede0925a02")]
 
 // Version information for an assembly consists of the following four values:
 //

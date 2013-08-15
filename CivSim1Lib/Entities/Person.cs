@@ -1,6 +1,6 @@
-﻿using CivSim1Lib.World;
+﻿using CivSim1.Lib.World;
 
-namespace CivSim1Lib.Entities
+namespace CivSim1.Lib.Entities
 {
     public class Person : Entity
     {
