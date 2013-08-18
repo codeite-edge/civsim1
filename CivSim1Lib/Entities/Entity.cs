@@ -1,7 +1,9 @@
-﻿namespace CivSim1Lib.Entities
+﻿using CivSim1Lib.World;
+
+namespace CivSim1Lib.Entities
 {
-    public class Entity
+    public abstract class Entity
     {
-         
+        public abstract void Tick(Zone zone);
     }
 }
