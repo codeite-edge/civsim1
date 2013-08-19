@@ -15,24 +15,14 @@ namespace CivSim1.Lib.World
                 return;
             }
 
-            var type = resource.GetType();
-
-            var existingResource = _resources.SingleOrDefault(x => x.GetType() == type);
-
-            if (existingResource == null)
-            {
                 _resources.Add(resource);
-            }
-            else
-            {
-                existingResource.Amount += resource.Amount;
-            }
+            
         }
 
         public T GetResourceAgrigate<T>(T instance) where T : Resource
         {
-            var amount = _resources.OfType<T>().Sum(x => x.Amount);
-            instance.Amount = amount;
+            var amount = _resources.OfType<T>().Sum(x => x.Mass);
+            instance.Mass = amount;
             return instance;
         }
     }
