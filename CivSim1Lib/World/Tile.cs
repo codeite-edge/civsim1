@@ -15,7 +15,16 @@ namespace CivSim1.Lib.World
                 return;
             }
 
+            var existing = _resources.FirstOrDefault(x => x.Signature == resource.Signature);
+            
+            if (existing != null)
+            {
+                existing.Mass += resource.Mass;
+            }
+            else
+            {
                 _resources.Add(resource);
+            }
             
         }
 
@@ -24,6 +33,11 @@ namespace CivSim1.Lib.World
             var amount = _resources.OfType<T>().Sum(x => x.Mass);
             instance.Mass = amount;
             return instance;
+        }
+
+        public Resource GetResourceWithSignature(string signature)
+        {
+            return _resources.FirstOrDefault(x => x.Signature == signature);
         }
     }
 }

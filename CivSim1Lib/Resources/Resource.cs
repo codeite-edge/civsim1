@@ -4,12 +4,20 @@ namespace CivSim1.Lib.Resources
 {
     public class Resource
     {
+        private readonly string _signature;
+
         public Resource(string signature, float mass, IEnumerable<Component> components)
         {
             Mass = mass;
+            _signature = signature;
         }
 
         public float Mass { get; set; }
+
+        public string Signature
+        {
+            get { return _signature; }
+        }
     }
 
     public struct Component
@@ -29,6 +37,13 @@ namespace CivSim1.Lib.Resources
         VitaminA,
         VitaminB,
         VitaminC,
-        Wood
+        HardWood,
+        SoftWood,
+        Silica,
+        Quartz,
+        Iron,
+        Aluminium,
+        Tin,
+        Copper,
     }
 }

@@ -31,7 +31,7 @@ namespace CivSim1.Tests
         {
             // Arrange
             var zone = new Zone(5);
-            zone.Tiles[2, 3].AddResource(new FoodResource(100));
+            zone.Tiles[2, 3].AddResource(FoodResourceFactory.MakeHazelNut(10));
 
             // Act
 

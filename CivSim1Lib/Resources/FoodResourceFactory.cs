@@ -5,24 +5,15 @@ using System.Text;
 
 namespace CivSim1.Lib.Resources
 {
-    static class TreeResourceFactory
+    public static class FoodResourceFactory
     {
-        public static Resource MakeRedBerries(float mass)
-        {
-            return new Resource("RedBerry",
-                                mass,
-                                new[]
-                                {
-                                    new Component {ComponentType = ComponentType.Wood, Mass = mass}
-                                });
-        }
-    }
+        public const string RedBerry = "RedBerry";
+        public const string YellowBerry = "YellowBerry";
+        public const string HazelNut = "HazelNut";
 
-    static class FoodResourceFactory
-    {
         public static Resource MakeRedBerries(float mass)
         {
-            return new Resource("RedBerry",
+            return new Resource(RedBerry,
                                 mass,
                                 new[]
                                 {
@@ -35,7 +26,7 @@ namespace CivSim1.Lib.Resources
 
         public static Resource MakeYellowBerries(float mass)
         {
-            return new Resource("YellowBerry",
+            return new Resource(YellowBerry,
                                 mass,
                                 new[]
                                 {
@@ -46,9 +37,9 @@ namespace CivSim1.Lib.Resources
                                 });
         }
 
-        public static Resource MakeNuts(float mass)
+        public static Resource MakeHazelNut(float mass)
         {
-            return new Resource("HazelNut",
+            return new Resource(HazelNut,
                                 mass,
                                 new[]
                                 {

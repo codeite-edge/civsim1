@@ -46,6 +46,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\FoodResourceFactory.cs" />
     <Compile Include="Resources\Resource.cs" />
+    <Compile Include="Resources\StoneResourceFactory.cs" />
+    <Compile Include="Resources\TreeResourceFactory.cs" />
     <Compile Include="World\Tile.cs" />
     <Compile Include="World\Zone.cs" />
   </ItemGroup>

@@ -12,14 +12,15 @@ namespace CivSim1.Tests
         {
             // Arrange
             var tile = new Tile();
-            var foodResource = new FoodResource(100);
+            var foodResource = FoodResourceFactory.MakeHazelNut(1f);
 
             // Act
             tile.AddResource(foodResource);
 
             // Assert
-            var result = tile.GetResourceAgrigate(new FoodResource(0));
-            result.Amount.Should().Be(100);
+            var foundResource = tile.GetResourceWithSignature(FoodResourceFactory.HazelNut);
+            foundResource.Signature.Should().Be(FoodResourceFactory.HazelNut);
+            foundResource.Mass.Should().BeApproximately(1f, 0.01f);
         }
 
         [Test]
@@ -27,16 +28,16 @@ namespace CivSim1.Tests
         {
             // Arrange
             var tile = new Tile();
-            var foodResource = new FoodResource(55);
-            var stoneResource = new StoneResource(66);
+            var foodResource = FoodResourceFactory.MakeHazelNut(1f);
+            var stoneResource = StoneResourceFactory.MakeGranite(1000f);
 
             // Act
             tile.AddResource(foodResource);
             tile.AddResource(stoneResource);
 
             // Assert
-            tile.GetResourceAgrigate(new FoodResource(0)).Amount.Should().Be(55);
-            tile.GetResourceAgrigate(new StoneResource(0)).Amount.Should().Be(66);
+            tile.GetResourceWithSignature(FoodResourceFactory.HazelNut).Mass.Should().BeApproximately(1f, 0.01f);
+            tile.GetResourceWithSignature(StoneResourceFactory.Granite).Mass.Should().BeApproximately(1000f, 0.01f);
         }
 
         [Test]
@@ -44,31 +45,15 @@ namespace CivSim1.Tests
         {
             // Arrange
             var tile = new Tile();
-            var foodResourceInitial = new FoodResource(25);
-            var foodResourceAdd = new FoodResource(50);
+            var foodResourceInitial = FoodResourceFactory.MakeHazelNut(10f);
+            var foodResourceAdd = FoodResourceFactory.MakeHazelNut(20f);
 
             // Act
             tile.AddResource(foodResourceInitial);
             tile.AddResource(foodResourceAdd);
 
             // Assert
-            tile.GetResourceAgrigate(new FoodResource(0)).Amount.Should().Be(75);
-        }
-
-        [Test]
-        public void CanGetAgrigateResources()
-        {
-            // Arrange
-            var tile = new Tile();
-            var foodResourceInitial = new BerryResource(25);
-            var foodResourceAdd = new NutsResource(50);
-
-            // Act
-            tile.AddResource(foodResourceInitial);
-            tile.AddResource(foodResourceAdd);
-
-            // Assert
-            tile.GetResourceAgrigate(new FoodResource(0)).Amount.Should().Be(75);
+            tile.GetResourceWithSignature(FoodResourceFactory.HazelNut).Mass.Should().BeApproximately(30f, 0.01f);
         }
     }
 }
